@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./src/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id= "form-div">
+            <h2 class="mt-4 text-center">User Details</h2>
+            <form action="#" id="main-form" onsubmit="checkForm(); return false">
+                <div class="form-group">
+                    <label for="user-name">Name:</label>
+                    <input type="text" class="form-control" id="user-name">
+                </div>
+                <div class="form-group">
+                    <label for="user-mail">Mail:</label>
+                    <input type="email" class="form-control" id="user-mail">
+                </div>
+                <div class="form-group">
+                    <label for="user-phone">Phone:</label>
+                    <input type="text" class="form-control" id="user-phone">
+                </div>
+                <div class="form-group">
+                    <label for="user-degree">Qualification:</label>
+                    <ul class="list-group" id="qualification-list"></ul>
+                    
+                    <input type="text" class="form-control mt-2" id="user-degree" placeholder="Degree">
+                    <input type="text" class="form-control mt-2" id="user-stream" placeholder="Stream">
+                    <input type="text" class="form-control mt-2" id="user-start-year" placeholder="Start year">
+                    <input type="text" class="form-control mt-2" id="user-end-year" placeholder="End year">
+                    <button type="button" class="btn btn-primary mt-4" id="add_qualification" onclick="addQual()">add entry</button>
+                </div>
+                <div class="form-group">
+                    <label for="user-projects">Projects:</label>
+                    <ul class="list-group mb-3" id="project-list"></ul>
+                    <div class="form-row">
+                        <div class="col-4">
+                            <input type="text" class="form-control" id="user-project-name" placeholder="title">
+                        </div>
+                        <div class="col-4">
+                            <textarea class="form-control" id="user-project-desc" placeholder="description"></textarea>
+                        </div>
+                        <div class="col-4">
+                            <textarea class="form-control" id="user-project-skills" placeholder="skills"></textarea>
+                        </div>
+                    </div>
+                    
+                    <button type="button" class="btn btn-primary mt-4" id="add_project" onclick="addProj()">add entry</button>
+                </div>
+                <button class="btn btn-success mb-5" type="submit">submit</button>
+            </form>
+        </div>
+        <div id="resume-div" class="mt-4">
+            Hi, I'm
+            <h2 id="name"></h2>
+            <h5>Project(s):</h5>
+            <ul id="projects"></ul>
+            <h5>Qualification(s):</h5>
+            <ul id="qualifications"></ul>
+            <h5>Contact:</h5>
+            <a id="mailid"></a>
+            <br />
+            <p>Phone: <span id="phone"></span></p>
+            
+        </div>
+    </div>
+    <script src="./src/script.js"></script>
+</body>
+</html>
